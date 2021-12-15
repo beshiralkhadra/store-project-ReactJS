@@ -1,24 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Footer from "./components/footer/Footer";
+import Home from "./components/home/Home";
+import Navbar from "./components/navbar/Navbar";
+import Products from "./components/products/Products";
+import Signup from "./components/registration/Signup";
+import Login from "./components/registration/Login";
 
 function App() {
+  const [userSignupInformation, setUserSignupInformation] = useState({
+    username: "",
+    email: "",
+    password: "",
+    repeatPassword: "",
+  });
+  const [userLoginInformation, setUserLoginInformation] = useState({
+    loginEmail: "",
+    loginPassword: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+  const [logged, setLogged] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar
+        submitted={submitted}
+        logged={logged}
+        setLogged={setLogged}
+        setSubmitted={setSubmitted}
+      />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/signup">
+          <Signup
+            userSignupInformation={userSignupInformation}
+            setUserSignupInformation={setUserSignupInformation}
+            submitted={submitted}
+            setSubmitted={setSubmitted}
+            setLogged={setLogged}
+          />
+        </Route>
+        <Route exact path="/login">
+          <Login
+            userLoginInformation={userLoginInformation}
+            setUserLoginInformation={setUserLoginInformation}
+            logged={logged}
+            setLogged={setLogged}
+            setSubmitted={setSubmitted}
+          />
+        </Route>
+        <Route exact path="/products">
+          <div className="products-style">
+            <Products />
+          </div>
+        </Route>
+      </Switch>
+      <Footer />
+    </Router>
   );
 }
 

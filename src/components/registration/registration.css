@@ -1,0 +1,80 @@
+.registration {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.registration-form-container {
+  background-color: white;
+  padding: 3em;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.registration-form-container a {
+  text-align: center;
+}
+
+.form-btn {
+  margin: 1em auto;
+  background-color: #e30613;
+  border: none;
+  padding: 1rem 2em;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.form-btn:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  outline: none;
+}
+
+.registretion-input {
+  padding: 1em;
+  border-radius: 10px;
+  border: solid 1px rgb(182, 182, 182);
+  width: 90%;
+}
+
+input:hover {
+  outline: none;
+}
+
+label {
+  display: inline-block;
+  padding: auto 1em;
+}
+.login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-form {
+  background-color: white;
+  padding: 3em;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.login-form a {
+  text-align: center;
+}
+.login-btn-form {
+  margin: 1em auto;
+  background-color: #e30613;
+  border: none;
+  padding: 1rem 2em;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.login-btn-form:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  outline: none;
+}

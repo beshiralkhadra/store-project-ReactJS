@@ -1,0 +1,23 @@
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: black;
+}
+.footer-container ul .social {
+  color: white;
+  padding: 0.5em;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.footer-container ul .social:hover {
+  transform: scale(1.2);
+  transition: 0.3s;
+}
+@media screen and (max-width: 480px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
